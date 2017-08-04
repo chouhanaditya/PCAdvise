@@ -1,0 +1,164 @@
+<div class="container" style="padding-top: 2%">
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <!--User error Dialog-->
+      <div class="row " *ngIf="IsError" style="padding-top: 1%">
+        <div class="alert alert-danger alert-dismissable col-sm-12">
+          <div class="col-sm-9">
+            <h3 style="font-size: 1.2vmin"> <strong>Errors! </strong>  </h3>
+
+            <ul *ngFor="let error of AllErrors" style="font-size: 1.2vmin" >
+              * {{error}}
+            </ul>
+
+          </div>
+          <div class="form-group" align="right">
+            <button class="btn-danger " align="middle"  data-dismiss="alert" aria-label="close" (click)="OnErrorOkClick()"> Ok&nbsp; <span class="	glyphicon glyphicon-ok-circle"></span></button>
+          </div>
+        </div>
+      </div>
+
+      <!--User added Dialog-->
+      <div class="row" *ngIf="IsFormSaved" style="padding-top: 1%">
+        <div class="alert alert-success alert-dismissable col-sm-12 ">
+          <ul> <strong>Success! </strong>User has been successfully added, you can edit other details and privelages by browsing from the navigation bar at left of the screen.</ul>
+        </div>
+      </div>
+
+      <!--Personal First Row-->
+
+        <div class="form-group">
+          <label> Name*: </label>
+          <br>
+          <input
+            type="text"
+            class="form-control"
+            [ngClass]="{inputErrored: contactForm.controls['Name'].invalid && contactForm.controls['Name'].touched}"
+            formControlName="Name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label> Email Address*: </label>
+          <br>
+          <input
+            type="email"
+            class="form-control"
+            [ngClass]="{inputErrored: contactForm.controls['EmailAddress'].invalid && contactForm.controls['EmailAddress'].touched}"
+            formControlName="EmailAddress"
+          >
+        </div>
+
+        <div class="form-group">
+          <label> Mobile Number*: </label>
+          <br>
+          <input
+            id="MobileNumber"
+            type="number"
+            class="form-control"
+            formControlName="MobileNumber"
+            [ngClass]="{inputErrored: contactForm.controls['MobileNumber'].invalid && contactForm.controls['MobileNumber'].touched}"
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Alternate Mobile Number: </label>
+          <br>
+          <input
+            id="AltMobileNumber"
+            type="number"
+            class="form-control"
+            formControlName="AltMobileNumber"
+            [ngClass]="{inputErrored: contactForm.controls['AltMobileNumber'].invalid && contactForm.controls['AltMobileNumber'].touched}"
+          >
+        </div>
+
+        <div class="form-group">
+          <label> Address Line 1: </label>
+          <br>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="AddressLine1"
+            [ngClass]="{inputErrored: contactForm.controls['AddressLine1'].invalid && contactForm.controls['AddressLine1'].touched}"
+
+          >
+        </div>
+
+        <div class="form-group">
+          <label> Address Line 2: </label>
+          <br>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="AddressLine2"
+            [ngClass]="{inputErrored: contactForm.controls['AddressLine2'].invalid && contactForm.controls['AddressLine2'].touched}"
+
+          >
+        </div>
+
+        <div class="form-group">
+          <label> City*: </label>
+          <br>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="City"
+            [ngClass]="{inputErrored: contactForm.controls['City'].invalid && contactForm.controls['City'].touched}"
+
+          >
+        </div>
+        <div class="form-group">
+          <label> State: </label>
+          <br>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="State"
+            [ngClass]="{inputErrored: contactForm.controls['State'].invalid && contactForm.controls['State'].touched}"
+
+          >
+        </div>
+
+        <fieldset class="form-group">
+              <label >Occupation</label>
+              <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="Occupation" (click)="Occupation='SchoolStudent'">
+                    School Student
+                  </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="Occupation" (click)="Occupation='CollegeStudent'">
+                  College Student
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="Occupation" (click)="Occupation='Employed'">
+                  Employed
+                </label>
+               </div>
+        </fieldset>
+
+        <div class="form-group">
+            <label *ngIf="Occupation =='SchoolStudent'"> School Name: </label>
+            <label *ngIf="Occupation =='CollegeStudent'"> College Name: </label>
+            <label *ngIf="Occupation =='Employed'"> Company Name: </label>
+            <br>
+            <input *ngIf="Occupation == 'SchoolStudent' || Occupation == 'CollegeStudent' || Occupation == 'Employed' "
+              type="text"
+              class="form-control"
+              formControlName="CompanyName"
+              [ngClass]="{inputErrored: contactForm.controls['CompanyName'].invalid && contactForm.controls['CompanyName'].touched}">
+        </div>
+
+        <div class="form-group">
+          <label for="exampleTextarea">Comment</label>
+          <textarea class="form-control" formControlName="Comment" id="exampleTextarea" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
