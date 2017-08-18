@@ -1,16 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css']
 })
-export class ContactUsComponent implements OnInit {
+export class ContactUsComponent implements OnInit, OnDestroy {
   contactForm: FormGroup;
-  Occupation: string;
+  Occupation = 'SchoolStudent';
+  IsError = false;
+  IsFormSaved = false;
+  redirectCounter = 12;
+  counterInterval: any;
 
-  constructor() {
+  constructor(private route: Router) {
   }
 
   ngOnInit() {
@@ -31,5 +36,19 @@ export class ContactUsComponent implements OnInit {
         CompanyName: new FormControl(''),
         Comment: new FormControl('', Validators.required)
       });
+  }
+  OnSubmitClick() {
+    this.IsFormSaved = true;
+    window.scrollTo(0, 0);
+    this.counterInterval = setInterval(() => {
+      this.redirectCounter--;
+    }, 1000);
+    setTimeout(
+      () => { this.IsFormSaved = false;
+        this.route.navigate(['/Home']);
+      }, 12000);
+  }
+  ngOnDestroy() {
+    clearInterval(this.counterInterval);
   }
 }

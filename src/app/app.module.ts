@@ -9,6 +9,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   {  path: '', redirectTo: '/Home', pathMatch : 'full'},
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     NotFoundComponent,
     HomeComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
