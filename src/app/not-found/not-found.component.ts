@@ -15,5 +15,7 @@ export class NotFoundComponent implements OnInit {
   OnClick() {
     this.route.navigate(['/ContactUs']);
   }
-
+  OnHomeClick() {
+    this.route.navigate(['/Home']);
+  }
 }

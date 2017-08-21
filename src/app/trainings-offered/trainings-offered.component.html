@@ -1,0 +1,26 @@
+<div class="container" style="padding-top: 2%">
+
+  <!--Trainings Header-->
+  <div class="row" style="padding-top: 1%">
+    <div class="col-md-12" align="center">
+      <h3><span><a routerLink="/TrainingsOffered"> Trainings Offered</a></span></h3>
+    </div>
+  </div>
+
+  <br>
+
+  <!--Trainings Body-->
+  <div class="row" style="padding-top: 3%" *ngFor="let Training of TrainingList;let i=index">
+
+    <div class="col-md-2">
+      <img class="img-thumbnail img-fluid " src={{Training.ImageURL}} style="float: left" alt="Photo"/>
+    </div>
+    <div class="col-md-10">
+      <br>
+      <h5> {{Training.Name}}</h5>
+      <p>"{{Training.Description}}"</p>
+    </div>
+
+  </div>
+
+</div>

@@ -1,149 +1,76 @@
 <div class="container-fluid" style="padding-top: 1%">
-  <!--Image  -->
-  <div class="image">
-      <img src="/assets/knowledge-exchange.jpg" style="height: 400px;width:100%"/>
-      <h4 ><span>You want to learn? <br /> &nbsp;We love teaching knowledge thirsty individuals!</span></h4>
-    </div>
 
-  <!--Trainings offered Header-->
-  <div class="row" style="padding-top: 1%">
-    <div class="col-sm-12">
-      <h2 align="middle"> Trainings offered</h2>
-    </div>
-  </div>
-
-  <br>
-
-  <!--Trainings offered Body-->
-  <div class="row" style="padding-top: 1%">
-      <div class="col-sm-1" align="left" style="left-padding:3%">
-        <button type="button" class="btn-info"  align="middle">
-         <<
-        </button>
-      </div>
-      <div class="col-sm-2">
-          <div class="panel panel-default" style="background-color: #F6F6F6" >
-            <div class="panel-heading">
-               <h4>Java- Basic to advanced</h4>
-            </div>
-            <div class="panel-body">
-
-            </div>
-          </div>
-      </div>
-      <div class="col-sm-2">
-        <div class="panel panel-default" style="background-color: #F6F6F6" >
-          <div class="panel-heading">
-            <h4>Cyber Security</h4>
-          </div>
-          <div class="panel-body">
-          </div>
+      <!--Image  -->
+      <div class="image">
+        <h5 ><span>You want to learn? <br /> We love teaching knowledge thirsty individuals!</span></h5>
+          <img src="/assets/knowledge-exchange.jpg" class=" img-fluid "style="height: 400px;width:100%"/>
+        </div>
+      <!--Trainings offered Header-->
+      <div class="row" style="padding-top: 3%">
+        <div class="col-md-12" align="center">
+          <h3><span> <a routerLink="/TrainingsOffered"> Trainings offered</a></span></h3>
         </div>
       </div>
-      <div class="col-sm-2">
-        <div class="panel panel-default" style="background-color: #F6F6F6" >
-          <div class="panel-heading">
-            <h4>Networking Concepts</h4>
+      <br>
+      <!--Trainings offered Body-->
+      <div class="row" style="padding-top: 1%">
+
+        <div class="col-md-2" align="center" style="left-padding:3%;padding-top:6%">
+              <button type="button" class="btn-info" (click)="OnTrainings_LeftClick()">
+               <<
+              </button>
           </div>
-          <div class="panel-body">
+
+        <div class="col-md-2" *ngFor="let Training of TrainingListDisplay4;let i=index">
+              <article>
+                <img class="img-thumbnail img-fluid " src={{Training.ImageURL}} align="center" alt={{Training.Name}}/>
+                <br>
+                <br>
+                <h5 style="text-align: center">{{Training.Name}}</h5>
+                <p  style="text-align: center">"{{Training.Description}}"</p>
+              </article>
           </div>
+
+        <div class="col-md-2" align="center" style="right-padding: 3%;padding-top:6%">
+              <button type="button" class="btn-info" (click)="OnTrainings_RightClick()">
+               >>
+              </button>
+          </div>
+
+      </div>
+
+      <br>
+      <hr>
+      <!--People Think about it Header-->
+      <div class="row" style="padding-top: 1%">
+        <div class="col-md-12" align="center">
+          <h3><span><a routerLink="/Recommendations"> What People think about us</a></span></h3>
         </div>
       </div>
-      <div class="col-sm-2">
-        <div class="panel panel-default" style="background-color: #F6F6F6" >
-          <div class="panel-heading">
-            <h4>Complete Dotnet</h4>
-          </div>
-          <div class="panel-body">
-          </div>
+      <br>
+      <!--People Think about it Body-->
+      <div class="row" style="padding-top: 1%">
+        <div class="col-md-2" align="center" style="left-padding:3%;padding-top:6%">
+          <button type="button" class="btn-info"  (click)="OnRecommendation_LeftClick()" >
+            <<
+          </button>
+        </div>
+
+        <div class="col-md-2" *ngFor="let Recommendation of RecommendationListDisplay4;let i=index">
+          <article>
+            <img class="img-thumbnail rounded-circle img-fluid " src={{Recommendation.ImageURL}} align="center" alt={{Recommendation.Name}}/>
+            <br>
+            <h5 style="text-align: center">{{Recommendation.Name}}</h5>
+            <h6 style="text-align: center" >{{Recommendation.Occupation}}</h6>
+            <p  style="text-align: center">"{{Recommendation.Comment}}"</p>
+          </article>
+        </div>
+
+        <div class="col-md-2"  align="center" style="right-padding:3%;padding-top:6%">
+          <button type="button" class="btn-info" (click)="OnRecommendation_RightClick()">
+            >>
+          </button>
         </div>
       </div>
-      <div class="col-sm-2">
-        <div class="panel panel-default" style="background-color: #F6F6F6" >
-          <div class="panel-heading">
-            <h4>Full Stack Development</h4>
-          </div>
-          <div class="panel-body">
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-1" align="right" style="right-padding: 3%">
-        <button type="button" class="btn-info" align="middle">
-         >>
-        </button>
-      </div>
-  </div>
-
-  <br>
-  <br>
-
-  <!--People Think about it Header-->
-  <div class="row" style="padding-top: 1%">
-    <div class="col-sm-12">
-      <h2 align="middle"> What People think about us</h2>
-    </div>
-  </div>
-
-  <br>
-
-  <!--People Think about it Body-->
-  <div class="row" style="padding-top: 1%">
-    <div class="col-sm-1" align="left" style="left-padding:3%; vertical-align: middle">
-      <button type="button" class="btn-info"  align="middle" style="vertical-align: middle" >
-        <<
-      </button>
-    </div>
-    <div class="col-sm-2">
-      <article>
-        <h3>Aditya Chouhan</h3>
-        <br>
-        <img src="/assets/sample.jpeg" alt="Photo"/>
-        <br>
-        <p>"Google Chrome is a free, open-source web browser developed by Google, released in 2008."</p>
-      </article>
-    </div>
-    <div class="col-sm-2">
-      <article>
-        <h3>Ajay Saxena</h3>
-        <br>
-        <img src="/assets/sample.jpeg" alt="Photo"/>
-        <br>
-        <p>"Google Chrome is a free, open-source web browser developed by Google, released in 2008."</p>
-      </article>
-    </div>
-    <div class="col-sm-2">
-      <article>
-        <h3>Moin Khan</h3>
-        <br>
-        <img src="/assets/sample.jpeg" alt="Photo"/>
-        <br>
-        <p>"Google Chrome is a free, open-source web browser developed by Google, released in 2008."</p>
-      </article>
-    </div>
-    <div class="col-sm-2">
-      <article>
-        <h3>Sartak Gupta</h3>
-        <br>
-        <img src="/assets/sample.jpeg" alt="Photo"/>
-        <br>
-        <p>"Google Chrome is a free, open-source web browser developed by Google, released in 2008."</p>
-      </article>
-    </div>
-    <div class="col-sm-2">
-      <article>
-        <h3>Varun Parihar</h3>
-        <br>
-        <img src="/assets/sample.jpeg" alt="Photo"/>
-        <br>
-        <p>"Google Chrome is a free, open-source web browser developed by Google, released in 2008."</p>
-      </article>
-    </div>
-
-    <div class="col-sm-1" align="right" style="right-padding:3%">
-      <button type="button" class="btn-info" align="middle">
-        >>
-      </button>
-    </div>
-  </div>
 
 </div>

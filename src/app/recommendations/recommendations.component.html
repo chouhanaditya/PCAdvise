@@ -1,0 +1,27 @@
+<div class="container" style="padding-top: 2%">
+
+      <!--People Think about it Header-->
+      <div class="row" style="padding-top: 1%">
+        <div class="col-md-12" align="center">
+          <h3><span><a routerLink="/Recommendations"> What People think about us</a></span></h3>
+        </div>
+      </div>
+
+      <br>
+
+      <!--People Think about it Body-->
+      <div class="row" style="padding-top: 3%" *ngFor="let Recommendation of RecommendationList;let i=index">
+
+        <div class="col-md-2">
+            <img class="img-thumbnail rounded-circle img-fluid " src={{Recommendation.ImageURL}} style="float: left" alt="Photo"/>
+        </div>
+        <div class="col-md-10">
+            <br>
+            <h5> {{Recommendation.Name}}</h5>
+            <h6>{{Recommendation.Occupation}}</h6>
+            <p>"{{Recommendation.Comment}}"</p>
+        </div>
+
+      </div>
+
+</div>

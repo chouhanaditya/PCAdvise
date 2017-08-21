@@ -10,11 +10,17 @@ import {RouterModule, Routes} from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
+import { RecommendationServices} from './Services/Recommendation.Services';
+import { RecommendationsComponent } from './recommendations/recommendations.component';
+import { TrainingsOfferedComponent } from './trainings-offered/trainings-offered.component';
+import {TrainingsService} from './Services/Trainings.Service';
 
 const appRoutes: Routes = [
   {  path: '', redirectTo: '/Home', pathMatch : 'full'},
   { path: 'Home', component: HomeComponent},
   { path: 'ContactUs', component: ContactUsComponent},
+  { path: 'Recommendations', component: RecommendationsComponent},
+  { path: 'TrainingsOffered', component: TrainingsOfferedComponent},
   { path: 'not-found', component: NotFoundComponent },
   { path: '**', redirectTo: '/not-found' }
 
@@ -26,7 +32,9 @@ const appRoutes: Routes = [
     NotFoundComponent,
     HomeComponent,
     ContactUsComponent,
-    FooterComponent
+    FooterComponent,
+    RecommendationsComponent,
+    TrainingsOfferedComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +43,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [RecommendationServices, TrainingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
