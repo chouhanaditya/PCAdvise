@@ -23,7 +23,7 @@
 
         <div class="col-md-2" *ngFor="let Training of TrainingListDisplay4;let i=index">
               <article>
-                <img class="img-thumbnail img-fluid " src={{Training.ImageURL}} align="center" alt={{Training.Name}}/>
+                <img class="img-thumbnail img-fluid " src={{Training.ImageURL}} align="center" alt={{Training.Name}} style="width: 300px;height: 200px"/>
                 <br>
                 <br>
                 <h5 style="text-align: center">{{Training.Name}}</h5>
@@ -56,9 +56,10 @@
           </button>
         </div>
 
-        <div class="col-md-2" *ngFor="let Recommendation of RecommendationListDisplay4;let i=index">
+        <div class="col-md-2" *ngFor="let Recommendation of RecommendationListDisplay4;let i=index" align="center">
           <article>
-            <img class="img-thumbnail rounded-circle img-fluid " src={{Recommendation.ImageURL}} align="center" alt={{Recommendation.Name}}/>
+            <img class="img-thumbnail rounded-circle img-fluid " src={{Recommendation.ImageURL}} align="center" alt={{Recommendation.Name}} style="width: 200px;height: 200px"/>
+            <br>
             <br>
             <h5 style="text-align: center">{{Recommendation.Name}}</h5>
             <h6 style="text-align: center" >{{Recommendation.Occupation}}</h6>
