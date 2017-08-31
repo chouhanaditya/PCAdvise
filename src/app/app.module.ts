@@ -14,6 +14,8 @@ import { RecommendationServices} from './Services/Recommendation.Services';
 import { RecommendationsComponent } from './recommendations/recommendations.component';
 import { TrainingsOfferedComponent } from './trainings-offered/trainings-offered.component';
 import {TrainingsService} from './Services/Trainings.Service';
+import { ServicesOfferedComponent } from './services-offered/services-offered.component';
+import {ServicesService} from "./Services/Services.Service";
 
 const appRoutes: Routes = [
   {  path: '', redirectTo: '/Home', pathMatch : 'full'},
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     ContactUsComponent,
     FooterComponent,
     RecommendationsComponent,
-    TrainingsOfferedComponent
+    TrainingsOfferedComponent,
+    ServicesOfferedComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [RecommendationServices, TrainingsService],
+  providers: [RecommendationServices, TrainingsService, ServicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

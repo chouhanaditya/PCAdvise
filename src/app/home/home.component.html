@@ -5,51 +5,86 @@
         <h5 ><span>You want to learn? <br /> We love teaching knowledge thirsty individuals!</span></h5>
           <img src="assets/knowledge-exchange.jpg" class=" img-fluid "style="height: 400px;width:100%"/>
         </div>
+      <br><br>
+
+      <!--Services offered Header-->
+      <div class="row">
+        <div class="col-md-12" align="center">
+          <h3><span> <a routerLink="/ServicesOffered"> Services offered</a></span></h3>
+        </div>
+      </div>
+      <br><br>
+      <!--Services offered Body-->
+      <div class="row" style="padding-left: 5%;padding-right: 5%">
+        <div class="col-md-4" *ngFor="let Service of ServiceList;let i=index">
+          <article>
+            <img class="img-thumbnail img-fluid " src={{Service.ImageURL}} align="center" alt={{Service.Name}} style="width: 300px;height: 200px"/>
+            <br>
+            <br>
+            <h5 style="text-align: center">{{Service.Name}}</h5>
+            <p  style="text-align: center">"{{Service.Description}}"</p>
+          </article>
+        </div>
+      </div>
+      <!--<br>-->
+      <!--&lt;!&ndash;Services offered Body&ndash;&gt;-->
+      <!--<div class="row" style="padding-left: 5%;padding-right: 5%">-->
+        <!--<div class="col-md-4" *ngFor="let Service of ServiceListlast3;let i=index">-->
+          <!--<article>-->
+            <!--<img class="img-thumbnail img-fluid " src={{Service.ImageURL}} align="center" alt={{Service.Name}} style="width: 300px;height: 200px"/>-->
+            <!--<br>-->
+            <!--<br>-->
+            <!--<h5 style="text-align: center">{{Service.Name}}</h5>-->
+            <!--<p  style="text-align: center">"{{Service.Description}}"</p>-->
+          <!--</article>-->
+        <!--</div>-->
+      <!--</div>-->
+      <br><br><hr><br>
+
       <!--Trainings offered Header-->
-      <div class="row" style="padding-top: 3%">
+      <div class="row">
         <div class="col-md-12" align="center">
           <h3><span> <a routerLink="/TrainingsOffered"> Trainings offered</a></span></h3>
         </div>
       </div>
-      <br>
+      <br><br>
       <!--Trainings offered Body-->
-      <div class="row" style="padding-top: 1%">
+      <div class="row" style="padding-left: 5%;padding-right: 5%">
 
-        <div class="col-md-2" align="center" style="left-padding:3%;padding-top:6%">
-              <button type="button" class="btn-info" (click)="OnTrainings_LeftClick()">
-               <<
-              </button>
-          </div>
+        <!--<div class="col-md-2" align="center" style="left-padding:3%;padding-top:6%">-->
+        <!--<button type="button" class="btn-info" (click)="OnTrainings_LeftClick()">-->
+        <!--<<-->
+        <!--</button>-->
+        <!--</div>-->
 
-        <div class="col-md-2" *ngFor="let Training of TrainingListDisplay4;let i=index">
-              <article>
-                <img class="img-thumbnail img-fluid " src={{Training.ImageURL}} align="center" alt={{Training.Name}} style="width: 300px;height: 200px"/>
-                <br>
-                <br>
-                <h5 style="text-align: center">{{Training.Name}}</h5>
-                <p  style="text-align: center">"{{Training.Description}}"</p>
-              </article>
-          </div>
+        <div class="col-md-3" *ngFor="let Training of TrainingList;let i=index">
+          <article>
+            <img class="img-thumbnail img-fluid " src={{Training.ImageURL}} align="center" alt={{Training.Name}} style="width: 300px;height: 200px"/>
+            <br>
+            <br>
+            <h5 style="text-align: center">{{Training.Name}}</h5>
+            <p  style="text-align: center">"{{Training.Description}}"</p>
+          </article>
+        </div>
 
-        <div class="col-md-2" align="center" style="right-padding: 3%;padding-top:6%">
-              <button type="button" class="btn-info" (click)="OnTrainings_RightClick()">
-               >>
-              </button>
-          </div>
+        <!--<div class="col-md-2" align="center" style="right-padding: 3%;padding-top:6%">-->
+        <!--<button type="button" class="btn-info" (click)="OnTrainings_RightClick()">-->
+        <!--&gt;>-->
+        <!--</button>-->
+        <!--</div>-->
 
       </div>
+      <br><br><hr><br>
 
-      <br>
-      <hr>
       <!--People Think about it Header-->
-      <div class="row" style="padding-top: 1%">
+      <div class="row">
         <div class="col-md-12" align="center">
-          <h3><span><a routerLink="/Recommendations"> What People think about us</a></span></h3>
+          <h3><span><a routerLink="/Recommendations"> What our Students think about us</a></span></h3>
         </div>
       </div>
-      <br>
+      <br><br>
       <!--People Think about it Body-->
-      <div class="row" style="padding-top: 1%">
+      <div class="row">
         <div class="col-md-2" align="center" style="left-padding:3%;padding-top:6%">
           <button type="button" class="btn-info"  (click)="OnRecommendation_LeftClick()" >
             <<
